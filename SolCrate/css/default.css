@@ -10,6 +10,10 @@ body {
 
 }
 
+h1 {
+    text-align:center;
+}
+
 /* Landscape */
 @media (orientation:landscape) { 
     html, body {
@@ -19,15 +23,23 @@ body {
     body {
 
     }
+
+    #dvContain {
+
+    }
 }
 
 /* Portrait */
 @media (orientation:portrait) {
     html, body {
-
+        
     }
 
     body {
+
+    }
+
+    #dvContain {
 
     }
 }
