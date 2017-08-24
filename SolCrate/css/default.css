@@ -4,6 +4,8 @@ html, body {
     padding:0;
     height:100%;
     width:100%;
+    color:rgb(0,191,255);
+    text-shadow:0.5px 0.5px 0.5px #fff;
 }
 
 body {
@@ -11,9 +13,33 @@ body {
 }
 
 h1 {
-    text-align:center;
+
 }
 
+h2 {
+
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+h5 {
+
+}
+
+h6 {
+
+}
+hr {
+    border-color:rgb(0,191,255);;
+    color:rgb(0,191,255);
+    opacity:0.2;
+}
 /* Landscape */
 @media (orientation:landscape) { 
     html, body {
@@ -25,8 +51,25 @@ h1 {
     }
 
     #dvContain {
-
+        height:100%;
     }
+
+    .elems {
+        box-shadow:0 0 5px  rgb(0,191,255) inset;
+        width:33.3%;
+        font-size:2vh;
+        height:88%;
+        text-align:center;
+        display:inline-block;
+    }
+        .elems p {
+            padding:5% 0;
+            text-align:left;
+            margin:4% 5%;
+        }
+            .elems p span {
+                float:right;
+            }
 }
 
 /* Portrait */
@@ -36,12 +79,51 @@ h1 {
     }
 
     body {
-
+        margin:0 1%;
+        overflow:auto;
+        -ms-overflow-style:none;
     }
+    h1 {
 
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+h5 {
+    margin-top:-1%;
+}
+
+h6 {
+
+}
     #dvContain {
 
     }
+    .elems {
+        box-shadow:0 0 5px  rgb(0,191,255) inset;
+        width:98%;
+        text-align:center;
+        padding: 5% 0;
+
+    }
+        .elems p {
+            padding:2% 0;
+            text-align:left;
+            margin:1% 5%;
+        }
+        .elems p span {
+                float:right;
+        }
 }
 
 /* Misc */
