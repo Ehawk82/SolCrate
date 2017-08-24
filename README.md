@@ -8,6 +8,9 @@ HTML, JS, CSS, C(for BLE stuffs)
 Release: Windows 8.1 mobile, Windows 10, Windows 10 mobile, 
 Later: IE11, Chrome, FF
 
+## Development Environment
+Visual Studio 2015 Community Edition, WinJS; UWP
+
 ## UI
 1. Hub layout with drop menus.
 2. Readouts: battery level, solar input, load output
