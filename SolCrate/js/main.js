@@ -60,7 +60,19 @@
         // You might use the WinJS.Application.sessionState object, which is automatically saved and restored across suspension.
         // If you need to complete an asynchronous operation before your application is suspended, call args.setPromise().
     };
-    var UI, uData;
+    var UI, uData, bData, pData;
+
+    pData = {
+        output: 0,
+        dayOutput: 0,
+        monthOutput: 0,
+        annualOutput: 0
+    };
+
+    bData = {
+        level: 0,
+        cap: 12.83
+    };
 
     uData = {
         trophy: 0,
@@ -83,12 +95,20 @@
             if (!uDta || uDta === null) {
                 localStorage.setItem("uData", JSON.stringify(uData));
             }
-            //testing 
-            var xx = localStorage.getItem("uData");
-            if (xx) {
-                var xxx = JSON.parse(xx);
-	            
+            var bDta = localStorage.getItem("bData");
+            if (!bDta || bDta === null) {
+                localStorage.setItem("bData", JSON.stringify(bData));
             }
+            var pDta = localStorage.getItem("pData");
+            if (!pDta || pDta === null) {
+                localStorage.setItem("pData", JSON.stringify(pData));
+            }
+            //testing 
+            //var xx = localStorage.getItem("uData");
+            //if (xx) {
+                //var xxx = JSON.parse(xx);
+	            
+            //}
             //console.log(xxx.dayRating);
 
         },
@@ -100,10 +120,20 @@
         /* program things and beyond! */
         doTheStuffs: () => {
             var hd, elem1, elem2, elem3, myThing1, myThing2, myThing3, sett,
-	            uData = localStorage.getItem("uData");
+	            uData = localStorage.getItem("uData"),
+                bData = localStorage.getItem("bData"),
+                pData = localStorage.getItem("pData");
 
             if (uData) {
                 var uuu = JSON.parse(uData);
+            }
+
+            if (bData) {
+                var bbb = JSON.parse(bData);
+            }
+
+            if (pData) {
+                var ppp = JSON.parse(pData);
             }
 
             myThing1 = "<h5>System Statistic</h5><hr />";
@@ -115,20 +145,20 @@
             myThing1 += "<p>Trophies: <span>" + uuu.trophy + "</span></p>";
 
             myThing2 = "<h5>Panel Feedback</h5><hr />";
-            myThing2 += "<p>&nbsp;</p>";
-            myThing2 += "<p>&nbsp;</p>";
-            myThing2 += "<p>&nbsp;</p>";
-            myThing2 += "<p>&nbsp;</p>";
-            myThing2 += "<p>&nbsp;</p>";
-            myThing2 += "<p>&nbsp;</p>";
+            myThing2 += "<p>Current Output: <span>" + ppp.output + "</span></p>";
+            myThing2 += "<p>Daily Average: <span>" + ppp.dayOutput + "</span></p>";
+            myThing2 += "<p>Monthly Average: <span>" + ppp.monthOutput + "</span></p>";
+            myThing2 += "<p>Annual Average: <span>" + ppp.annualOutput + "</span></p>";
+            myThing2 += "<p>&nbsp; <span>&nbsp;</span></p>";
+            myThing2 += "<p>&nbsp; <span>&nbsp;</span></p>";
 
             myThing3 = "<h5>Battery Bank</h5><hr />";
-            myThing3 += "<p>&nbsp;</p>";
-            myThing3 += "<p>&nbsp;</p>";
-            myThing3 += "<p>&nbsp;</p>";
-            myThing3 += "<p>&nbsp;</p>";
-            myThing3 += "<p>&nbsp;</p>";
-            myThing3 += "<p>&nbsp;</p>";
+            myThing3 += "<p>Current Battery Level: <span>" + bbb.level + "</span></p>";
+            myThing3 += "<p>Storage Capacity: <span>" + bbb.cap + " Volts</span></p>";
+            myThing3 += "<p>&nbsp; <span>&nbsp;</span></p>";
+            myThing3 += "<p>&nbsp; <span>&nbsp;</span></p>";
+            myThing3 += "<p>&nbsp; <span>&nbsp;</span></p>";
+            myThing3 += "<p>&nbsp; <span>&nbsp;</span></p>";
 
             hd = UI.createEle("h1");
             hd.innerHTML = "SolCrate";
@@ -168,7 +198,7 @@
 
                 closeBtn.innerHTML = "❌";
                 closeBtn.className = "closeBtn";
-                closeBtn.onclick = UI.closeSettPage(settPage);
+                closeBtn.onclick = UI.closeSettPage(settPage, sett);
 
                 settPage.className = "settPage";
                 settPage.appendChild(hd);
@@ -183,11 +213,13 @@
                 }, 10);
             }
         },
-        closeSettPage: (settPage) => {
+        closeSettPage: (settPage, sett) => {
             return () => {
                 settPage.className = "settPage";
+                sett.className = "settBtn";
 
                 setTimeout(() => {
+                    
                     settPage.remove();
                     console.log(dvContain);
                 }, 1100);
