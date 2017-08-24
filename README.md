@@ -64,3 +64,4 @@ Still no clue on what to call it.  For now, SunCrate is what i came up with
 ## NOTES
 *Could use some help with BLE, the circuitry side of things not the code part of it.
 *Advice on CSS as usual.
+*Branch1 has the bulk of the code that we are working with. 
