@@ -99,7 +99,7 @@
         },
         /* program things and beyond! */
         doTheStuffs: () => {
-            var hd, elem1, elem2, elem3, myThing1, myThing2, myThing3,
+            var hd, elem1, elem2, elem3, myThing1, myThing2, myThing3, sett,
 	            uData = localStorage.getItem("uData");
 
             if (uData) {
@@ -133,6 +133,11 @@
             hd = UI.createEle("h1");
             hd.innerHTML = "SolCrate";
 
+            sett = UI.createEle("div");
+            sett.className = "settBtn";
+            sett.onclick = UI.settingsPage(sett);
+            sett.innerHTML = "⚙";
+
             elem1 = UI.createEle("div");
             elem1.className = "elems";
             elem1.innerHTML = myThing1;
@@ -146,9 +151,48 @@
             elem3.innerHTML = myThing3;
 
             dvContain.appendChild(hd);
+            dvContain.appendChild(sett);
             dvContain.appendChild(elem3);
             dvContain.appendChild(elem2);
             dvContain.appendChild(elem1);
+        },
+        settingsPage: (sett) => {
+            return () => {
+                sett.className = "settBtn_step";
+
+                var settPage = UI.createEle("div"),
+                    hd = UI.createEle("h1"),
+                    closeBtn = UI.createEle("div");
+
+                hd.innerHTML = "Settings";
+
+                closeBtn.innerHTML = "❌";
+                closeBtn.className = "closeBtn";
+                closeBtn.onclick = UI.closeSettPage(settPage);
+
+                settPage.className = "settPage";
+                settPage.appendChild(hd);
+                settPage.appendChild(closeBtn);
+
+                dvContain.appendChild(settPage);
+
+                setTimeout(() => {
+
+                    settPage.className = "settPage_full";
+                   
+                }, 10);
+            }
+        },
+        closeSettPage: (settPage) => {
+            return () => {
+                settPage.className = "settPage";
+
+                setTimeout(() => {
+                    settPage.remove();
+                    console.log(dvContain);
+                }, 1100);
+                
+            }
         }
 	};
     /* startup and priority settings */

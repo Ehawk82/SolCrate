@@ -1,19 +1,20 @@
 ﻿/* Global */
 html, body {
-    margin:0;
-    padding:0;
-    height:100%;
-    width:100%;
-    color:rgb(0,191,255);
-    text-shadow:0.5px 0.5px 0.5px #fff;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    color: rgb(0,191,255);
+    text-shadow: 0.5px 0.5px 0.5px #fff;
 }
 
 body {
-
 }
 
 h1 {
-
+    width:80%;
+    text-indent:4%;
+    display:inline-block;
 }
 
 h2 {
@@ -35,95 +36,141 @@ h5 {
 h6 {
 
 }
+
 hr {
-    border-color:rgb(0,191,255);;
+    border-color: rgb(0,191,255);
+    color: rgb(0,191,255);
+    opacity: 0.2;
+}
+
+.settBtn {
+    width:10%;
+    display:inline-block;
+}
+    .settBtn:hover {
+        opacity:0.4;
+    }
+
+.settBtn_step {
+    display:none;
+}
+.settPage {
+    transition:all 1s;
+    position:absolute;
+    height:100%;
+    width:100%;
+    top:100%;
     color:rgb(0,191,255);
-    opacity:0.2;
+    background:#000;
+    box-shadow:0 0 5px rgb(0,191,255);
+}
+.settPage_full {
+    transition:all 1s;
+    position:absolute;
+    height:100%;
+    width:100%;
+    top:0;
+    color:rgb(0,191,255);
+    background:#000;
+    box-shadow:0 0 5px rgb(0,191,255);
+}
+
+.closeBtn {
+    width:10%;
+    display:inline-block;
+}
+    .closeBtn:hover {
+        opacity:0.4;
+    }
+.closeBtn_step {
+    display:none;
 }
 /* Landscape */
-@media (orientation:landscape) { 
+@media (orientation:landscape) {
     html, body {
-
     }
 
     body {
-
     }
 
     #dvContain {
-        height:100%;
+        height: 100%;
     }
 
     .elems {
-        box-shadow:0 0 5px  rgb(0,191,255) inset;
-        width:33.3%;
-        font-size:2vh;
-        height:88%;
-        text-align:center;
-        display:inline-block;
+        box-shadow: 0 0 5px rgb(0,191,255) inset;
+        width: 33.3%;
+        font-size: 2vh;
+        height: 88%;
+        text-align: center;
+        display: inline-block;
     }
+
         .elems p {
-            padding:5% 0;
-            text-align:left;
-            margin:4% 5%;
+            padding: 5% 0;
+            text-align: left;
+            margin: 4% 5%;
         }
+
             .elems p span {
-                float:right;
+                float: right;
             }
 }
 
 /* Portrait */
 @media (orientation:portrait) {
     html, body {
-        
     }
 
     body {
-        margin:0 1%;
-        overflow:auto;
-        -ms-overflow-style:none;
+        margin: 0 1%;
+        overflow: auto;
+        -ms-overflow-style: none;
     }
+
     h1 {
+        
+    }
 
-}
+    h2 {
+    }
 
-h2 {
+    h3 {
 
-}
+    }
 
-h3 {
+    h4 {
 
-}
+    }
 
-h4 {
+    h5 {
+        margin-top: -1%;
+    }
 
-}
+    h6 {
 
-h5 {
-    margin-top:-1%;
-}
+    }
 
-h6 {
-
-}
     #dvContain {
 
     }
-    .elems {
-        box-shadow:0 0 5px  rgb(0,191,255) inset;
-        width:98%;
-        text-align:center;
-        padding: 5% 0;
 
+    .elems {
+        box-shadow: 0 0 5px rgb(0,191,255) inset;
+        width: 98%;
+        text-align: center;
+        padding: 5% 0;
     }
+
         .elems p {
-            padding:2% 0;
-            text-align:left;
-            margin:1% 5%;
+            padding: 2% 0;
+            text-align: left;
+            margin: 1% 5%;
         }
-        .elems p span {
-                float:right;
-        }
+
+            .elems p span {
+                float: right;
+            }
 }
 
 /* Misc */
