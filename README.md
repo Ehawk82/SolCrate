@@ -60,3 +60,7 @@ Still no clue on what to call it.  For now, SunCrate is what i came up with
 * Fee: Free with product purchase
 * Trial: N/A
 * Release Date: TBA
+
+## NOTES
+*Could use some help with BLE, the circuitry side of things not the code part of it.
+*Advice on CSS as usual.
