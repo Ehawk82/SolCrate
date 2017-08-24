@@ -1,5 +1,5 @@
 # SolCrate
-SolCrate is the Windows 10 design
+SolCrate; The Windows 10 Edition
 
 ## Scripting Language
 HTML, JS, CSS, C(for BLE stuffs)
