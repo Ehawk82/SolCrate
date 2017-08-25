@@ -56,7 +56,7 @@ hr {
     display:none;
 }
 .settPage {
-    transition:all 1s;
+    transition:all 600ms;
     position:absolute;
     height:100%;
     width:100%;
@@ -66,7 +66,7 @@ hr {
     box-shadow:0 0 5px rgb(0,191,255);
 }
 .settPage_full {
-    transition:all 1s;
+    transition:all 600ms;
     position:absolute;
     height:100%;
     width:100%;
@@ -86,6 +86,12 @@ hr {
 .closeBtn_step {
     display:none;
 }
+
+.lsClear {
+    margin-left:1%;
+    
+}
+
 /* Landscape */
 @media (orientation:landscape) {
     html, body {

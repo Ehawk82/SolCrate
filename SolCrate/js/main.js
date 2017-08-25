@@ -192,7 +192,8 @@
 
                 var settPage = UI.createEle("div"),
                     hd = UI.createEle("h1"),
-                    closeBtn = UI.createEle("div");
+                    closeBtn = UI.createEle("div"),
+                    lsClear = UI.createEle("div");
 
                 hd.innerHTML = "Settings";
 
@@ -200,9 +201,14 @@
                 closeBtn.className = "closeBtn";
                 closeBtn.onclick = UI.closeSettPage(settPage, sett);
 
+                lsClear.innerHTML = "Clear App Storage";
+                lsClear.className = "lsClear";
+                lsClear.onclick = UI.clearLS;
+
                 settPage.className = "settPage";
                 settPage.appendChild(hd);
                 settPage.appendChild(closeBtn);
+                settPage.appendChild(lsClear);
 
                 dvContain.appendChild(settPage);
 
@@ -210,7 +216,7 @@
 
                     settPage.className = "settPage_full";
                    
-                }, 10);
+                }, 100);
             }
         },
         closeSettPage: (settPage, sett) => {
@@ -225,9 +231,13 @@
                 }, 1100);
                 
             }
+        },
+        clearLS: () => {
+            localStorage.clear();
+            location.reload();
         }
 	};
-    /* startup and priority settings */
+    /* startup and global priority settings */
 	window.onload = () => {
 
 	    UI.startup();
