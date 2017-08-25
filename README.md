@@ -40,11 +40,11 @@ panels are designed to stay above 12v on a cloudy day but also still remain unde
 wires: 14 gauge wire from battery bank to regulator to wall outlet(and switch)
 16 gauge wire running from panels to regulator. 
 
-Inverter: 40w/h, 12v DC to 300w AC
+Inverter: 40w/h MAX, 12v DC to 300w AC
 
 System flow is like this:
 
-Solar Array--->Regulator--->Battery Bank--->Regulator--->Inverter---switch---<outlet
+Solar Array--->Regulator--->Battery Bank--->Regulator--->Inverter--->switch--->outlet
 
 ## BLE Board and other BLE information:
 -notice- totally unsure on what to do as far as developing this module.  I think i have a BLE borad somewhere in my shop, I have no idea on how to use it though.
